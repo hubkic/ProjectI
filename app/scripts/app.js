@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name project1App
+ * @name projectPLtable
  * @description
- * # project1App
+ * # projectPLtable
  *
  * Main module of the application.
  */
 angular
-  .module('project1App', [
+  .module('projectPLtable', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -20,16 +20,26 @@ angular
     'ngTouch'
   ])
   .config(function ($routeProvider) {
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        controllerAs: 'mainController'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        controllerAs: 'aboutControler'
+      })
+      .when('/contact',{
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl',
+        controlerAs: 'contactController'
       })
       .otherwise({
-        redirectTo: '/'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'mainController'
       });
   });
